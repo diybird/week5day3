@@ -1,0 +1,212 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffc0cb; 
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 5px solid #ff69b4; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ff69b4; 
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff1493; 
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #ff69b4; 
+}
+
+.rabbit-card {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff; 
+    border: 2px solid #ff69b4; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rabbit-image {
+    width: 100px; 
+    height: 100px; 
+    margin-bottom: 10px;
+    border: 2px solid #ff69b4; 
+    border-radius: 50%; 
+}
+
+.rabbit-tag {
+    font-weight: bold;
+    color: #ff69b4; 
+
+   
+}
+
+
+.rabbit-card {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+}
+
+.rabbit-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+/* Pseudo-element for the gradient border */
+.rabbit-card:hover::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+    border-radius: 15px; 
+    z-index: -1;
+}
+
+.rabbit-card:hover .rabbit-image {
+    transform: scale(1.15); /* Make the image 15% bigger on hover */
+    background-color: yellow; /* Change background color to yellow on hover */
+    border: 2px solid transparent; /* Hide the border on hover */
+    background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red); /* Rainbow gradient border on hover */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+
+
+/* CSS for gallery page */
+.gallery-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .photo {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    flex: 1; /* Ensure each item takes equal space */
+    max-width: calc(25% - 40px); /* Set maximum width for 4 items in a row */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    position: relative;
+    overflow: hidden; /* Hide overflowing description */
+    min-width: 200px; /* Minimum width for each item */
+  }
+  
+  .photo img {
+    width: 100%; /* Ensure images take full width of the item */
+    height: auto; /* Maintain the original aspect ratio */
+    margin-bottom: 10px;
+  }
+  
+  .photo .caption {
+    color: #ff69b4;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px; /* Add margin for spacing */
+  }
+  
+  .photo .description {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: opacity 0.3s; /* Add a transition effect for opacity */
+  }
+  
+  .photo:hover .description {
+    opacity: 1; /* Fade in the description on hover */
+  }
+
+  /* CSS for the pop-up window */
+.info-box {
+  visibility: hidden;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 20px;
+  max-width: 80%; /* Adjust the maximum width as needed */
+  text-align: center;
+  z-index: 1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-heading {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.info-close {
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.info-close:hover {
+  color: yellow;
+}
+  
+  
+  
+  

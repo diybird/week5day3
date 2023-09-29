@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Join the Rabbit Community</title>
+</head>
+<body>
+    <header>
+        <h1 class="animated-heading">Join the Rabbit Community</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join</a></li> 
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Sign In and Join the Rabbit Community</h2>
+            <p class="animated-text">Fill out the form below to become a part of our rabbit-loving community. Get access to exclusive rabbit adoption updates, events, and more!</p>
+            <div id="welcomeMessage"></div>
+            <form action="process_signup.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+            
+                <input type="submit" value="Sign Up">
+            </form>
+            
+        </section>
+    </main>
+    <footer>
+        <p>For more information, visit <a href="https://www.laanimalservices.com/search/other?items_per_page=24&ajax_field_species=107&sort_order=ASC" target="_blank" class="animated-link">LA Animal Services</a></p>
+    </footer>
+    
+    <script>
+        // Function to handle form submission
+        function signIn() {
+            // Get the values entered by the user
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+    
+            // Check if both fields are filled
+            if (username.trim() === '' || email.trim() === '') {
+                alert('Please fill out both fields.');
+                return;
+            }
+    
+            // Display the welcome message
+            var welcomeMessage = document.getElementById('welcomeMessage');
+            welcomeMessage.innerHTML = '<p>Welcome, ' + username + '! You have successfully signed in with email ' + email + '.</p>';
+    
+            // Clear the form fields
+            document.getElementById('username').value = '';
+            document.getElementById('email').value = '';
+        }
+    
+        // Attach the signIn function to the form submission
+        var form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting via HTTP
+            signIn();
+        });
+    </script>
+</body>
+</html>
